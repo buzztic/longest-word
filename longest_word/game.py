@@ -3,6 +3,8 @@
 
 import random
 import string
+import requests
+import json
 
 class Game:
     def __init__(self) -> list:
@@ -14,6 +16,8 @@ class Game:
 
     def is_valid(self, word: str) -> bool:
         """Return True if and only if the word is valid, given the Game's grid"""
-        if not word:
+        dict_result = requests.get(f'https://wagon-dictionary.herokuapp.com/{word}')
+        dict_result = json.loads(dict_result.content)
+        if not dict_result.get('found') or not word:
             return False
         return word == self.grid
