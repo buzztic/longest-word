@@ -5,6 +5,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: black;
 }
 .letter {
   border: 1px solid #999;
@@ -13,7 +14,7 @@ body {
   display: inline-block;
   text-align: center;
   background-color: #FFEB3B33;
-  color: #666;
+  color: #d51d1d;
 }
 #form, #results {
   margin: 1em 0;
